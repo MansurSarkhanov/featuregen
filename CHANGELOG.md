@@ -1,4 +1,4 @@
-## 1.0.3
+## 1.0.4
 
 - Initial release of feature_structure
 - Generates standard feature-first folder structure:
