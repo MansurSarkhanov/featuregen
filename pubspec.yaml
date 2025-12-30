@@ -1,6 +1,6 @@
 name: feature_structure
 description: A Dart CLI tool to generate clean feature-first folder structures for Flutter projects.
-version: 1.0.2
+version: 1.0.3
 repository: https://github.com/MansurSarkhanov/featuregen
 
 environment:

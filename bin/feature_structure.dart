@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Kullanım: featuregen create <feature_name>');
+    print('Usage: featuregen create <feature_name>');
     exit(1);
   }
 
@@ -11,7 +11,7 @@ void main(List<String> arguments) {
     final featureName = arguments[1];
     generateFeatureStructure(featureName);
   } else {
-    print('Kullanım: featuregen create <feature_name>');
+    print('Usage: featuregen create <feature_name>');
   }
 }
 
@@ -31,9 +31,9 @@ void generateFeatureStructure(String featureName) {
     final dir = Directory(path);
     if (!dir.existsSync()) {
       dir.createSync(recursive: true);
-      print('Oluşturuldu: $path');
+      print('Created: $path');
     } else {
-      print('Zaten var: $path');
+      print('Already exists: $path');
     }
   }
 }
