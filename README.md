@@ -1,6 +1,6 @@
-# 📦 featuregen
+# 📦 feature_structure
 
-**featuregen** is a lightweight Dart CLI tool that helps you generate a clean, scalable feature-first folder structure for your Flutter projects.
+**feature_structure** is a lightweight Dart CLI tool that helps you generate a clean, scalable feature-first folder structure for your Flutter projects.
 
 If you follow a structure like `lib/features/feature_name/{domain,data,presentation}`, this tool will save you a ton of setup time.
 
@@ -38,11 +38,11 @@ lib/
 ## 🚀 Getting Started
 1. Activate globally
 ```bash
-dart pub global activate featuregen
+dart pub global activate feature_structure
 ```
 2. Run inside any Flutter project root
 ```bash
-featuregen create your_feature_name
+feature_structure create your_feature_name
 ```
 
 This will generate the folder structure at lib/features/your_feature_name/.
@@ -51,7 +51,7 @@ This will generate the folder structure at lib/features/your_feature_name/.
 
 If you get this error:
 
-command not found: featuregen
+command not found: feature_structure
 
 
 Add this to your shell config file (~/.zshrc, ~/.bashrc, ~/.bash_profile):
@@ -66,7 +66,7 @@ source ~/.zshrc
 
 Try again:
 ```bash
-featuregen create login
+feature_structure create login
 ```
 💡 Coming Soon
 

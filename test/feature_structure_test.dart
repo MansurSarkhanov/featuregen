@@ -1,4 +1,4 @@
-import 'package:featuregen/featuregen.dart';
+import 'package:feature_structure/feature_structure.dart';
 import 'package:test/test.dart';
 
 void main() {
