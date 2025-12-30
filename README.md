@@ -30,18 +30,20 @@ lib/
         └── presentation/
             ├── pages/
             └── widgets/
+   ```          
 
 
 
-🚀 Getting Started
+ 
+## 🚀 Getting Started
 1. Activate globally
 ```bash
 dart pub global activate featuregen
-
+```
 2. Run inside any Flutter project root
 ```bash
 featuregen create your_feature_name
-
+```
 
 This will generate the folder structure at lib/features/your_feature_name/.
 
@@ -55,18 +57,17 @@ command not found: featuregen
 Add this to your shell config file (~/.zshrc, ~/.bashrc, ~/.bash_profile):
 ```bash
 export PATH="$PATH":"$HOME/.pub-cache/bin"
-
+```
 
 Then restart your terminal (or run):
 ```bash
 source ~/.zshrc
-
+```
 
 Try again:
 ```bash
 featuregen create login
-
-
+```
 💡 Coming Soon
 
 Automatic template .dart file generation
