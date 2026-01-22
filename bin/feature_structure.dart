@@ -1,31 +1,43 @@
 import 'dart:io';
 
+import 'enums/state_enum.dart';
+
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Usage: featuregen create <feature_name>');
+    _printUsage();
     exit(1);
   }
 
-  final command = arguments[0];
-  if (command == 'create' && arguments.length > 1) {
+  final command = arguments.first;
+
+  if (command == 'create' && arguments.length >= 2) {
     final featureName = arguments[1];
-    generateFeatureStructure(featureName);
+    final flag = arguments.length > 2 ? arguments[2] : null;
+    generateFeatureStructure(featureName, flag: flag);
   } else {
-    print('Usage: featuregen create <feature_name>');
+    _printUsage();
   }
 }
 
-void generateFeatureStructure(String featureName) {
+void generateFeatureStructure(String featureName, {String? flag}) {
   final baseDir = 'lib/features/$featureName';
 
-  final structure = [
+  final structure = <String>[
     '$baseDir/domain/entities',
     '$baseDir/domain/repositories',
     '$baseDir/data/models',
-    '$baseDir/data/sources',
-    '$baseDir/presentation/pages',
+    '$baseDir/data/services',
+    '$baseDir/presentation/screens',
     '$baseDir/presentation/widgets',
   ];
+
+  if (flag == StateEnum.bloc.name) {
+    structure.add('$baseDir/presentation/bloc');
+  } else if (flag == StateEnum.provider.name) {
+    structure.add('$baseDir/presentation/provider');
+  } else if (flag == StateEnum.getx.name) {
+    structure.add('$baseDir/presentation/controller');
+  }
 
   for (final path in structure) {
     final dir = Directory(path);
@@ -36,4 +48,17 @@ void generateFeatureStructure(String featureName) {
       print('Already exists: $path');
     }
   }
+}
+
+void _printUsage() {
+  print('''
+Usage:
+  feature_structure create <feature_name> [options]
+
+Options:
+  --bloc        Create bloc folder under presentation
+  --provider    Create provider folder under presentation
+  --getx    Create controller folder under presentation
+
+''');
 }
